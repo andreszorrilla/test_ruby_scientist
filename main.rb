@@ -7,7 +7,7 @@ def calculating_scientist_h_index(citations, h_index)
 
   puts("Since the amount of citations by scientist is (#{scientist.citations.join(', ')}),")
   puts("then the scientist has #{scientist.citations.size} papers")
-  puts("and #{scientist.h_index(h_index)} papers with citations above the #{h_index} threshold.")
+  puts("and #{scientist.h_index(h_index) || 'no'} papers with citations above the #{h_index} threshold.")
 end
 
 def run_tests
