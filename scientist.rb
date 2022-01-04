@@ -12,17 +12,15 @@ class Scientist
     @citations = citations
   end
 
-  def h_index(h_value)
+  def h_index
     """
-    A scientist has index h if h of his/her N papers have at least h citations each,
-    and the other N − h papers have no more than h citations each.
+      A scientist has index h if h of his/her N papers have at least h citations each,
+      and the other N − h papers have no more than h citations each.
     """
-    raise ScientistError, 'h-index must not be less than zero' if h_value.negative?
-
-    h_index_value = nil
-
-    h_papers = citations.select { |citation| citation >= h_value }.size
-    h_index_value = h_papers if h_papers >= h_value && (citations.size - h_papers) < h_value
-    h_index_value
+    citations.size.times do |h_value|
+      h_papers = citations.select { |citation| citation >= h_value }.size
+      return h_value if h_papers >= h_value && (citations.size - h_papers) < h_value
+    end
+    nil
   end
 end
