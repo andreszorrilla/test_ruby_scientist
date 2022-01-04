@@ -16,9 +16,9 @@ Install the `test-unit` gem by running the following command in your terminal:
 
 ## How to run the script
 To run the code for getting the results immediately (without tests)
-> `ruby main.rb -c "3, 0, 6, 1, 5 2" --h-citations 3`
+> `ruby main.rb -c "3, 0, 6, 1, 5 2"`
 
-where `-c` stands for citations and `--h-citations` is the threshold value for getting the amount of papers that are above this value.
+where `-c` stands for citations.
 
 ## How to run the tests
 The tests has been created by using `test-unit`
