@@ -19,7 +19,7 @@ class Scientist
     """
     citations.size.times do |h_value|
       h_papers = citations.select { |citation| citation >= h_value }.size
-      return h_value if h_papers >= h_value && (citations.size - h_papers) < h_value
+      return h_value if h_papers >= h_value && (citations.size - h_value) < h_value
     end
     nil
   end
